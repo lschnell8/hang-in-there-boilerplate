@@ -6,11 +6,14 @@ var showRandomPosterBtn = document.querySelector(".show-random");
 var makeYourOwnPosterBtn = document.querySelector(".show-form");
 var formPage = document.querySelector(".poster-form");
 var mainPage = document.querySelector(".main-poster");
+var showSavedPostersBtn = document.querySelector(".show-saved");
+var savedPostersPage = document.querySelector(".saved-posters");
 
 // event listeners go here 👇
 window.addEventListener("load", generatePoster);
 showRandomPosterBtn.addEventListener("click", generatePoster);
 makeYourOwnPosterBtn.addEventListener("click", showFormPage);
+showSavedPostersBtn.addEventListener("click", showSavedPosterPage)
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
@@ -27,4 +30,9 @@ function generatePoster() {
 function showFormPage() {
   mainPage.classList.add("hidden");
   formPage.classList.remove("hidden");
-}
+};
+
+function showSavedPosterPage() {
+  mainPage.classList.add("hidden");
+  savedPostersPage.classList.remove("hidden");
+};
