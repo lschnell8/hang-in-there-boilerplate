@@ -62,6 +62,7 @@ function createUserPoster() {
   images.push(imageInput.value);
   titles.push(titleInput.value);
   quotes.push(quoteInput.value);
+  currentPoster = new Poster(imageInput.value, titleInput.value, quoteInput.value);
   image.src = imageInput.value;
   title.innerText = titleInput.value;
   quote.innerText = quoteInput.value;
