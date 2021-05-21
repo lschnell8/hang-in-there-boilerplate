@@ -15,7 +15,7 @@ var titleInput = document.getElementById('poster-title');
 var imageInput = document.getElementById('poster-image-url');
 var quoteInput = document.getElementById('poster-quote');
 var savePosterBtn = document.querySelector('.save-poster');
-
+var showSavedPostersBtn = document.querySelector('.show-saved');
 // event listeners go here 👇
 window.addEventListener("load", generatePoster);
 showRandomPosterBtn.addEventListener("click", generatePoster);
@@ -25,6 +25,7 @@ takeMeBackBtn.addEventListener("click", takeMeBack);
 backToMainBtn.addEventListener("click", backToMain);
 showMyPosterBtn.addEventListener("click", createUserPoster)
 savePosterBtn.addEventListener("click", savePoster);
+showSavedPostersBtn.addEventListener("click", showSavedPostersPage);
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
@@ -76,3 +77,8 @@ if (!savedPosters.includes(currentPoster)) {
   savedPosters.push(currentPoster);
   };
 };
+
+function showSavedPostersPage() {
+  mainPage.classList.add('hidden');
+  savedPostersPage.classList.remove('hidden');
+}
