@@ -72,5 +72,7 @@ function createUserPoster() {
 };
 
 function savePoster() {
+if (!savedPosters.includes(currentPoster)) {
   savedPosters.push(currentPoster);
+  };
 };
