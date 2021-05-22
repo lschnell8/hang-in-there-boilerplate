@@ -16,6 +16,7 @@ var imageInput = document.getElementById('poster-image-url');
 var quoteInput = document.getElementById('poster-quote');
 var savePosterBtn = document.querySelector('.save-poster');
 var showSavedPostersBtn = document.querySelector('.show-saved');
+var savedPostersGrid = document.querySelector('.saved-posters-grid');
 // event listeners go here 👇
 window.addEventListener("load", generatePoster);
 showRandomPosterBtn.addEventListener("click", generatePoster);
@@ -86,20 +87,13 @@ function showSavedPostersPage() {
 };
 
 function displayMiniPoster() {
-  // clearSavedAreaInnerHTML();
+  savedPostersGrid.innerHTML = "";
   for (var i = 0; i < savedPosters.length; i++) {
-    var miniPoster = `<article class="saved-posters-grid mini-cover" id=${savedPosters[i].id}>
-      <img class="poster-img" src=${savedPosters[i].imageURL} alt="nothin' to see here">
-      <h1 class="poster-title">${savedPosters[i].title}</h1>
-      <h3 class="poster-quote">${savedPosters[i].quote}</h3>
-    </article>`
-    savedPostersPage.insertAdjacentHTML("afterbegin", miniPoster)
+    savedPostersGrid.innerHTML += `<div class="mini-poster" id=${savedPosters[i].id}><img class="poster-img" src=${savedPosters[i].imageURL} alt="nothin' to see here">
+      <h2 class="poster-title">${savedPosters[i].title}</h2>
+      <h4 class="poster-quote">${savedPosters[i].quote}</h4></div>`
+}
 };
-};
-
-// function clearSavedAreaInnerHTML() {
-//   savedPostersPage.innerHTML = '';
-// };
 
 // function removePoster() {
 //   event.target.closest('.mini-poster')
