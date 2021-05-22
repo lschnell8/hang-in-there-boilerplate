@@ -26,7 +26,7 @@ backToMainBtn.addEventListener("click", backToMain);
 showMyPosterBtn.addEventListener("click", createUserPoster)
 savePosterBtn.addEventListener("click", savePoster);
 showSavedPostersBtn.addEventListener("click", showSavedPostersPage);
-savedPostersPage.addEventListener("dblclick", removePoster);
+// savedPostersPage.addEventListener("dblclick", removePoster);
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
@@ -37,7 +37,7 @@ function generatePoster() {
   image.src = images[getRandomIndex(images)];
   title.innerText = titles[getRandomIndex(titles)];
   quote.innerText = quotes[getRandomIndex(quotes)];
-  currentPoster = new Poster(image.src, title.Innertext, quote.innerText);
+  currentPoster = new Poster(image.src, title.innerText, quote.innerText);
 };
 
 function showFormPage() {
@@ -83,11 +83,27 @@ function showSavedPostersPage() {
   mainPage.classList.add('hidden');
   savedPostersPage.classList.remove('hidden');
   displayMiniPoster();
-}
+};
 
 function displayMiniPoster() {
-  for(var i = 0; i < savedPosters.length; i++ ) {
-    var displayPoster = savedPosters[i].classList.add("mini-poster")
-    savedPostersPage.insertAdjacentHTML("afterbegin", displayPoster)
-  }
-}
+  // clearSavedAreaInnerHTML();
+  for (var i = 0; i < savedPosters.length; i++) {
+    var miniPoster = `<article class="saved-posters-grid mini-cover" id=${savedPosters[i].id}>
+      <img class="poster-img" src=${savedPosters[i].imageURL} alt="nothin' to see here">
+      <h1 class="poster-title">${savedPosters[i].title}</h1>
+      <h3 class="poster-quote">${savedPosters[i].quote}</h3>
+    </article>`
+    savedPostersPage.insertAdjacentHTML("afterbegin", miniPoster)
+};
+};
+
+// function clearSavedAreaInnerHTML() {
+//   savedPostersPage.innerHTML = '';
+// };
+
+// function removePoster() {
+//   event.target.closest('.mini-poster')
+//   for(var i = 0; i < savedPosters.length; i++) {
+//     savedPosters[i].splice(i, 1);
+//   }
+// }
