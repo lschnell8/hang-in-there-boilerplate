@@ -26,6 +26,7 @@ backToMainBtn.addEventListener("click", backToMain);
 showMyPosterBtn.addEventListener("click", createUserPoster)
 savePosterBtn.addEventListener("click", savePoster);
 showSavedPostersBtn.addEventListener("click", showSavedPostersPage);
+savedPostersPage.addEventListener("dblclick", removePoster);
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
@@ -81,4 +82,12 @@ if (!savedPosters.includes(currentPoster)) {
 function showSavedPostersPage() {
   mainPage.classList.add('hidden');
   savedPostersPage.classList.remove('hidden');
+  displayMiniPoster();
+}
+
+function displayMiniPoster() {
+  for(var i = 0; i < savedPosters.length; i++ ) {
+    var displayPoster = savedPosters[i].classList.add("mini-poster")
+    savedPostersPage.insertAdjacentHTML("afterbegin", displayPoster)
+  }
 }
