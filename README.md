@@ -5,7 +5,7 @@
   - [Technologies](##Technologies)
   - [Features](##Features)
   - [Illustrations](##Illustrations)
-  - [Deployed Page](##Deployed Page)
+  - [Deployed Page](##Deployed-Page)
   - [Possible Future Extensions](##Possible-Future-Extensions)
   - [Set Up](##Set-Up)
   - [Sources](##Sources)
