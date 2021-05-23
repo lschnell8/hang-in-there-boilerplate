@@ -12,7 +12,8 @@
   - [Project Specs](##Project-Specs)
 
 ## Introduction
-    Hang In There is a site that generates some random motivational encouragement. Flip through the posters for a combination of motivational pictures, titles, and quotes from the provided assets or click the *Make Your Own Poster* button and fill out the form to make a personalized poster.  
+ 
+Hang In There is a site that generates some random motivational encouragement. Flip through the posters for a combination of motivational pictures, titles, and quotes from the provided assets or click the *Make Your Own Poster* button and fill out the form to make a personalized poster.  
 
 ## Technologies
   - Javascript
