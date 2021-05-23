@@ -22,34 +22,34 @@ Hang In There is a site that generates some random motivational encouragement. F
 
 ## Features
 
-    Main Page:
+   Main Page:
 
-    - When Hang In There loads you will see a randomly generated motivational poster
-    - Refresh or click the *Show Another Random Poster* button to generate a new random poster
-    - User can save the displayed poster by clicking the *Save This Poster* button
-    - View any saved posters by clicking the *Show Saved Posters* button
-    - Each unique poster will only be saved once
+   - When Hang In There loads you will see a randomly generated motivational poster
+   - Refresh or click the *Show Another Random Poster* button to generate a new random poster
+   - User can save the displayed poster by clicking the *Save This Poster* button
+   - View any saved posters by clicking the *Show Saved Posters* button
+   - Each unique poster will only be saved once
 
-    Form Page:
+   Form Page:
 
-    - Click the *Make Your Own Poster* button to access the form to create your own poster
-    - The *Image URL* field takes an image address in order to display a poster  
-    image, but will accept any text. If the input is not a valid image address,  
-    a broken link will be displayed in place of the image on the poster
-    - The other two input fields will accept and utilize any text
-    - Clicking the *Nevermind, take me back* button from the form page will take the user back to  
-    the main page view
+   - Click the *Make Your Own Poster* button to access the form to create your own poster
+   - The *Image URL* field takes an image address in order to display a poster  
+   image, but will accept any text. If the input is not a valid image address,  
+   a broken link will be displayed in place of the image on the poster
+   - The other two input fields will accept and utilize any text
+   - Clicking the *Nevermind, take me back* button from the form page will take the user back to  
+   the main page view
 
-    Displaying your poster:
+   Displaying your poster:
 
-    - After clicking *Show my poster* on the form page, the user is taken to the main page where their personalized motivational poster is displayed
-    - User may save their unique poster by clicking *Save This Poster*
+   - After clicking *Show my poster* on the form page, the user is taken to the main page where their personalized motivational poster is displayed
+   - User may save their unique poster by clicking *Save This Poster*
 
-    Show Saved Posters:
+   Show Saved Posters:
 
-    - Each saved poster will be displayed as a mini-poster
-    - To remove a saved poster from the page, simply double-click the miniature poster image
-    - User may navigate back to the home page from this  
+   - Each saved poster will be displayed as a mini-poster
+   - To remove a saved poster from the page, simply double-click the miniature poster image
+   - User may navigate back to the home page from this  
     section
 
 ## Illustrations
