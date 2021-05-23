@@ -1,15 +1,15 @@
 # Hang In There
 
 ## Table of Contents
-  - [Introduction](## Introduction)
-  - [Technologies](## Technologies)
-  - [Features](## Features)
-  - [Illustrations](## Illustrations)
-  - [Deployed Page](## Deployed Page)
-  - [Possible Future Extensions](## Possible Future Extensions)
-  - [Set Up](## Set Up)
-  - [Sources](## Sources)
-  - [Project Specs](## Project Specs)
+  - [Introduction](##Introduction)
+  - [Technologies](##Technologies)
+  - [Features](##Features)
+  - [Illustrations](##Illustrations)
+  - [Deployed Page](##Deployed Page)
+  - [Possible Future Extensions](##Possible-Future-Extensions)
+  - [Set Up](##Set-Up)
+  - [Sources](##Sources)
+  - [Project Specs](##Project-Specs)
 
 ## Introduction
     Hang In There is a site that generates some random motivational encouragement. Flip through the posters for a combination of motivational pictures, titles, and quotes from the provided assets or click the *Make Your Own Poster* button and fill out the form to make a personalized poster.  
