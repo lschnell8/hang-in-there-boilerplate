@@ -16,6 +16,7 @@ var imageInput = document.getElementById('poster-image-url');
 var quoteInput = document.getElementById('poster-quote');
 var savePosterBtn = document.querySelector('.save-poster');
 var showSavedPostersBtn = document.querySelector('.show-saved');
+var savedPostersGrid = document.querySelector('.saved-posters-grid');
 // event listeners go here 👇
 window.addEventListener("load", generatePoster);
 showRandomPosterBtn.addEventListener("click", generatePoster);
@@ -26,6 +27,7 @@ backToMainBtn.addEventListener("click", backToMain);
 showMyPosterBtn.addEventListener("click", createUserPoster)
 savePosterBtn.addEventListener("click", savePoster);
 showSavedPostersBtn.addEventListener("click", showSavedPostersPage);
+savedPostersPage.addEventListener("dblclick", removePoster);
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
@@ -36,7 +38,7 @@ function generatePoster() {
   image.src = images[getRandomIndex(images)];
   title.innerText = titles[getRandomIndex(titles)];
   quote.innerText = quotes[getRandomIndex(quotes)];
-  currentPoster = new Poster(image.src, title.Innertext, quote.innerText);
+  currentPoster = new Poster(image.src, title.innerText, quote.innerText);
 };
 
 function showFormPage() {
@@ -81,4 +83,24 @@ if (!savedPosters.includes(currentPoster)) {
 function showSavedPostersPage() {
   mainPage.classList.add('hidden');
   savedPostersPage.classList.remove('hidden');
+  displayMiniPoster();
+};
+
+function displayMiniPoster() {
+  savedPostersGrid.innerHTML = "";
+  for (var i = 0; i < savedPosters.length; i++) {
+    savedPostersGrid.innerHTML += `<div class="mini-poster" id=${savedPosters[i].id}><img class="poster-img" src=${savedPosters[i].imageURL} alt="nothin' to see here">
+      <h2 class="poster-title">${savedPosters[i].title}</h2>
+      <h4 class="poster-quote">${savedPosters[i].quote}</h4></div>`
 }
+};
+
+function removePoster() {
+  var trash = event.target.closest('.mini-poster')
+  for(var i = 0; i < savedPosters.length; i++) {
+    if (savedPosters[i].id === Number(trash.id)) {
+      savedPosters.splice([i], 1);
+      displayMiniPoster();
+    }
+  }
+};
