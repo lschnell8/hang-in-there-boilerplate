@@ -1,33 +1,37 @@
 // query selector variables go here 👇
-var title = document.querySelector(".poster-title");
-var quote = document.querySelector(".poster-quote");
-var image = document.querySelector(".poster-img");
-var showRandomPosterBtn = document.querySelector(".show-random");
+// Buttons:
+var backToMainBtn = document.querySelector(".back-to-main");
 var makeYourOwnPosterBtn = document.querySelector(".show-form");
+var savePosterBtn = document.querySelector('.save-poster');
+var showMyPosterBtn = document.querySelector(".make-poster");
+var showRandomPosterBtn = document.querySelector(".show-random");
+var showSavedPostersBtn = document.querySelector('.show-saved');
+var takeMeBackBtn = document.querySelector(".show-main");
+
+// Pages:
 var formPage = document.querySelector(".poster-form");
 var mainPage = document.querySelector(".main-poster");
-var showSavedPostersBtn = document.querySelector(".show-saved");
 var savedPostersPage = document.querySelector(".saved-posters");
-var takeMeBackBtn = document.querySelector(".show-main");
-var backToMainBtn = document.querySelector(".back-to-main");
-var showMyPosterBtn = document.querySelector(".make-poster");
-var titleInput = document.getElementById('poster-title');
+
+// Misc:
+var image = document.querySelector(".poster-img");
 var imageInput = document.getElementById('poster-image-url');
-var quoteInput = document.getElementById('poster-quote');
-var savePosterBtn = document.querySelector('.save-poster');
-var showSavedPostersBtn = document.querySelector('.show-saved');
 var savedPostersGrid = document.querySelector('.saved-posters-grid');
+var title = document.querySelector(".poster-title");
+var titleInput = document.getElementById('poster-title');
+var quote = document.querySelector(".poster-quote");
+var quoteInput = document.getElementById('poster-quote');
+
 // event listeners go here 👇
 window.addEventListener("load", generatePoster);
-showRandomPosterBtn.addEventListener("click", generatePoster);
-makeYourOwnPosterBtn.addEventListener("click", showFormPage);
-showSavedPostersBtn.addEventListener("click", showSavedPosterPage)
-takeMeBackBtn.addEventListener("click", takeMeBack);
 backToMainBtn.addEventListener("click", backToMain);
-showMyPosterBtn.addEventListener("click", createUserPoster)
-savePosterBtn.addEventListener("click", savePoster);
-showSavedPostersBtn.addEventListener("click", showSavedPostersPage);
+makeYourOwnPosterBtn.addEventListener("click", showFormPage);
 savedPostersPage.addEventListener("dblclick", removePoster);
+savePosterBtn.addEventListener("click", savePoster);
+showMyPosterBtn.addEventListener("click", createUserPoster)
+showRandomPosterBtn.addEventListener("click", generatePoster);
+showSavedPostersBtn.addEventListener("click", showSavedPostersPage);
+takeMeBackBtn.addEventListener("click", takeMeBack);
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
 function getRandomIndex(array) {
@@ -42,29 +46,30 @@ function generatePoster() {
 };
 
 function showFormPage() {
-  mainPage.classList.add("hidden");
-  formPage.classList.remove("hidden");
+  hideMainPage();
+  unhideFormPage();
 };
 
-function showSavedPosterPage() {
-  mainPage.classList.add("hidden");
-  savedPostersPage.classList.remove("hidden");
+function showSavedPostersPage() {
+  hideMainPage();
+  unhideSavedPostersPage();
+  displayMiniPoster();
 };
 
 function takeMeBack() {
-  mainPage.classList.remove("hidden");
-  formPage.classList.add("hidden");
+  unhideMainPage();
+  hideFormPage();
 };
 
 function backToMain(){
-  mainPage.classList.remove("hidden");
-  savedPostersPage.classList.add("hidden");
+  unhideMainPage();
+  hideSavedPosterPage();
 };
 
 function createUserPoster() {
   event.preventDefault();
-  formPage.classList.add("hidden");
-  mainPage.classList.remove("hidden");
+  hideFormPage();
+  unhideMainPage();
   images.push(imageInput.value);
   titles.push(titleInput.value);
   quotes.push(quoteInput.value);
@@ -80,11 +85,6 @@ if (!savedPosters.includes(currentPoster)) {
   };
 };
 
-function showSavedPostersPage() {
-  mainPage.classList.add('hidden');
-  savedPostersPage.classList.remove('hidden');
-  displayMiniPoster();
-};
 
 function displayMiniPoster() {
   savedPostersGrid.innerHTML = "";
@@ -103,4 +103,28 @@ function removePoster() {
       displayMiniPoster();
     }
   }
+};
+
+function hideMainPage() {
+  mainPage.classList.add("hidden");
+};
+
+function unhideFormPage() {
+  formPage.classList.remove("hidden");
+};
+
+function unhideSavedPostersPage() {
+  savedPostersPage.classList.remove('hidden');
+};
+
+function unhideMainPage() {
+  mainPage.classList.remove("hidden");
+};
+
+function hideFormPage() {
+  formPage.classList.add("hidden");
+};
+
+function hideSavedPosterPage() {
+  savedPostersPage.classList.add("hidden");
 };
